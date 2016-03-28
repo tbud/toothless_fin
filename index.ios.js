@@ -8,45 +8,46 @@ import React, {
   Component,
   StyleSheet,
   Text,
-  View
 } from 'react-native';
+import Button from './kits/button';
+import View from './kits/view'
 
-class toothless_fin extends Component {
-  render() {
+const toothless_fin = React.createClass({
+  getInitialState(){
+    return {
+      buttonText: 'Action',
+      showText: '123'
+    }
+  },
+
+  render(){
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+      <View style={{flex: 1, alignItems: 'center'}}>
+        <View style={{flex: 1, marginTop: 100}}>
+          <Button buttonText='toothless' style={styles.buttonStyle} click={this._handleClick}/>
+        </View>
+        <View>
+          <Text>{this.state.showText}</Text>
+        </View>
       </View>
-    );
+    )
+  },
+
+  _handleClick(){
+    this.setState({showText: 'toothless'})
   }
-}
+});
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  buttonStyle:{
+    backgroundColor: '#FF9E08',
+    alignItems:'center',
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    width: 100,
+    height: 50,
+    borderRadius: 5
+  }
 });
+
 
 AppRegistry.registerComponent('toothless_fin', () => toothless_fin);
