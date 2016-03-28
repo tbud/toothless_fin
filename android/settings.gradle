@@ -1,0 +1,3 @@
+rootProject.name = 'toothless_fin'
+
+include ':app'
