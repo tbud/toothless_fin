@@ -20,11 +20,11 @@ const Button = React.createClass({
   render(){
     return (
       <View style={styles.container}>
-        <View style={[styles.buttonStyle, this.props.style]}>
           <TouchableOpacity onPress={this.props.click}>
-            <Text>{this.props.buttonText}</Text>
+            <View style={[styles.buttonStyle, this.props.style]}>
+              <Text>{this.props.buttonText}</Text>
+            </View>
           </TouchableOpacity>
-        </View>
       </View>
     )
   },
