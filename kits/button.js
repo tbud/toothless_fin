@@ -13,25 +13,22 @@ const Button = React.createClass({
   getDefaultProps(){
     return {
       buttonText: '123',
-      click: () => {}
+      onPress: () => {}
     }
   },
 
   render(){
     return (
       <View style={styles.container}>
-          <TouchableOpacity onPress={this.props.click}>
+          <TouchableOpacity onPress={this.props.onPress}>
             <View style={[styles.buttonStyle, this.props.style]}>
               <Text>{this.props.buttonText}</Text>
             </View>
           </TouchableOpacity>
       </View>
     )
-  },
-
-  _onPressButton(){
-    console.log('hello world');
   }
+
 });
 
 const styles = StyleSheet.create({

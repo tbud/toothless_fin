@@ -16,7 +16,7 @@ const toothless_fin = React.createClass({
   getInitialState(){
     return {
       buttonText: 'Action',
-      showText: '123'
+      showText: 'test text'
     }
   },
 
@@ -24,7 +24,7 @@ const toothless_fin = React.createClass({
     return (
       <View style={{flex: 1, alignItems: 'center'}}>
         <View style={{flex: 1, marginTop: 100}}>
-          <Button buttonText='toothless' style={styles.buttonStyle} click={this._handleClick}/>
+          <Button buttonText='toothless' style={styles.buttonStyle} onPress={this._handleClick}/>
         </View>
         <View>
           <Text>{this.state.showText}</Text>
