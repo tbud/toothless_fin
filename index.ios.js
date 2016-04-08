@@ -7,10 +7,15 @@ import React, {
   AppRegistry,
   Component,
   StyleSheet,
-  Text,
+  Alert,
 } from 'react-native';
-import Button from './kits/button';
-import View from './kits/view'
+import {Button, View, Text} from 'toothless';
+
+// import View from './kits/view'
+
+import Scale from 'toothless_scale';
+
+var TView = require('toothless').View;
 
 const toothless_fin = React.createClass({
   getInitialState(){
@@ -23,12 +28,13 @@ const toothless_fin = React.createClass({
   render(){
     return (
       <View style={{flex: 1, alignItems: 'center'}}>
-        <View style={{flex: 1, marginTop: 100}}>
-          <Button buttonText='toothless' style={styles.buttonStyle} onPress={this._handleClick}/>
+        <View style={styles.buttonStyle}>
+          <Button value='确定'/>
         </View>
         <View>
           <Text>{this.state.showText}</Text>
         </View>
+        <TView style={{height:50, width:50}} onPress={()=> Alert.alert('Hello')}/>
       </View>
     )
   },
@@ -39,9 +45,9 @@ const toothless_fin = React.createClass({
 });
 
 const styles = StyleSheet.create({
-  buttonStyle:{
+  buttonStyle: {
     backgroundColor: '#FF9E08',
-    alignItems:'center',
+    alignItems: 'center',
     justifyContent: 'center',
     width: 100,
     height: 50,
