@@ -11,48 +11,38 @@ import React, {
 } from 'react-native';
 import {Button, View, Text} from 'toothless';
 
-// import View from './kits/view'
-
 import Scale from 'toothless_scale';
 
-var TView = require('toothless').View;
+class toothless_fin extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-const toothless_fin = React.createClass({
-  getInitialState(){
-    return {
-      buttonText: 'Action',
-      showText: 'test text'
-    }
-  },
+  state = {
+    buttonText: 'Action',
+    showText: 'toothless'
+  }
 
-  render(){
+  render() {
     return (
-      <View style={{flex: 1, alignItems: 'center'}}>
-        <View style={styles.buttonStyle}>
-          <Button value='确定'/>
-        </View>
-        <View>
-          <Text>{this.state.showText}</Text>
-        </View>
-        <TView style={{height:50, width:50}} onPress={()=> Alert.alert('Hello')}/>
+      <View style={styles.container}>
+        <View style={{height:50, width:50}} onPress={()=> Alert.alert('Hello')}/>
+        <Text>{this.state.showText}</Text>
+        <Button value='确定' onPress={()=> this._handleClick()}/>
       </View>
     )
-  },
-
-  _handleClick(){
-    this.setState({showText: 'toothless'});
   }
-});
+
+  _handleClick() {
+    this.setState({showText: 'Welcome toothless!'});
+  }
+}
 
 const styles = StyleSheet.create({
-  buttonStyle: {
-    backgroundColor: '#FF9E08',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 100,
-    height: 50,
-    borderRadius: 5
-  }
+  container: {
+    flex: 1,
+    alignItems: 'center'
+  },
 });
 
 
