@@ -11,7 +11,9 @@ import React, {
 } from 'react-native';
 import {Button, View, Text} from 'toothless';
 
-import Scale from 'toothless_scale';
+import scale from 'toothless_scale';
+
+scale.changeTheme('nick');
 
 class toothless_fin extends Component {
   constructor(props) {
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center'
-  },
+  }
 });
 
 
