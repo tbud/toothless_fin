@@ -41,7 +41,6 @@ export default class App extends Component {
                 <Button value='主要按钮' disabled type="primary" onPress={()=> this._handleClick()}/>
                 <Button value='幽灵按钮' disabled type="flat" onPress={()=> this._handleClick()}/>
 
-
             </View>
         )
     }

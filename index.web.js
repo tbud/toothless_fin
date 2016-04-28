@@ -7,7 +7,10 @@ import App from './App';
 
 if (__DEV__) {
   const HMRClient = require('HMRClient');
-  HMRClient.enable('web', 'index.web.bundle', 'localhost', 8081);
+  if (window.location) {
+    let loc = window.location;
+    HMRClient.enable('web', 'index.web.bundle', loc.hostname, loc.port);
+  }
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
