@@ -29,7 +29,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <View style={{height:50, width:50}} onPress={()=> Alert.alert('Hello')}/>
         <Text>{this.state.showText}</Text>
-        <Input/>
+        <Input placeholder="这是没有输入的时候显示的默认文字"/>
         <Image style={{width: 50, height: 50}} source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}/>
         <Button value='普通按钮' onPress={()=> this._handleClick()}/>
         <Button value='幽灵按钮' flat="true" onPress={()=> this._handleClick()}/>
