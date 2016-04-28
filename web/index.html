@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="renderer" content="webkit">
     <link rel="stylesheet" href="./styles.css">
+    <script src="./fastclick.min.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            FastClick.attach(document.body);
+        }, false);
+    </script>
 </head>
 <body>
     <div id="root" class="flex"></div>
