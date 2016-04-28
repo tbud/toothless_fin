@@ -33,11 +33,13 @@ export default class App extends Component {
                 <Image style={{width: 50, height: 50}}
                        source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}/>
                 <Button value='普通按钮' onPress={()=> this._handleClick()}/>
-                <Button value='普通按钮 Block' block="true" onPress={()=> this._handleClick()}/>
-                <Button value='幽灵按钮' flat="true" onPress={()=> this._handleClick()}/>
-                <Button value='不能点击' disabled="true" onPress={()=> this._handleClick()}/>
-                <Button value='不可点的幽灵按钮' flat="true" disabled="true" onPress={()=> this._handleClick()}/>
-                <Button value='不可点的普通按钮 Block' block="true" disabled="true" onPress={()=> this._handleClick()}/>
+                <Button value='普通按钮 Block' block onPress={()=> this._handleClick()}/>
+                <Button value='主要按钮' type="primary" onPress={()=> this._handleClick()}/>
+                <Button value='幽灵按钮' type="flat" onPress={()=> this._handleClick()}/>
+                <Button value='普通按钮' disabled onPress={()=> this._handleClick()}/>
+                <Button value='普通按钮 Block' disabled block onPress={()=> this._handleClick()}/>
+                <Button value='主要按钮' disabled type="primary" onPress={()=> this._handleClick()}/>
+                <Button value='幽灵按钮' disabled type="flat" onPress={()=> this._handleClick()}/>
 
 
             </View>
