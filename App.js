@@ -12,7 +12,7 @@ import React, {
   StyleSheet,
 } from 'toothless';
 
-Scale.changeTheme('dark');
+Scale.changeTheme('233');
 
 export default class App extends Component {
   constructor(props) {
@@ -31,7 +31,10 @@ export default class App extends Component {
         <Text>{this.state.showText}</Text>
         <Input/>
         <Image style={{width: 50, height: 50}} source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}/>
-        <Button value='确定' onPress={()=> this._handleClick()}/>
+        <Button value='普通按钮' onPress={()=> this._handleClick()}/>
+        <Button value='幽灵按钮' flat="true" onPress={()=> this._handleClick()}/>
+        <Button value='不能点击' disabled="true" onPress={()=> this._handleClick()}/>
+        <Button value='不可点的幽灵按钮' flat="true" disabled="true" onPress={()=> this._handleClick()}/>
       </View>
     )
   }
