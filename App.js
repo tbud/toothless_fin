@@ -29,18 +29,24 @@ export default class App extends Component {
             <View style={styles.container}>
                 <View style={{height:50, width:50, backgroundColor:'#ddd'}} onPress={()=> Alert.alert('Hello')}/>
                 <Text>{this.state.showText}</Text>
-                <Input placeholder="这是没有输入的时候显示的默认文字"/>
+
+                <Input placeholder="normal input" />
+                <Input placeholder="password input" password value="123"/>
+                <Input placeholder="number input" keyboardType="numeric" value="123"/>
+                <Input placeholder="phone input" keyboardType="phone-pad" value="13913911339"/>
+                <Input placeholder="email input" keyboardType="email-address" value="123@ttt.com"/>
+
                 <Image style={{width: 50, height: 50}}
                        source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}/>
-                <Button value='普通按钮' onPress={()=> this._handleClick()}/>
-                <Button value='普通按钮 Block' block onPress={()=> this._handleClick()}/>
-                <Button value='主要按钮' type="primary" onPress={()=> this._handleClick()}/>
-                <Button value='幽灵按钮' type="flat" onPress={()=> this._handleClick()}/>
-                <Button value='普通按钮' disabled onPress={()=> this._handleClick()}/>
-                <Button value='普通按钮 Block' disabled block onPress={()=> this._handleClick()}/>
-                <Button value='主要按钮' disabled type="primary" onPress={()=> this._handleClick()}/>
-                <Button value='幽灵按钮' disabled type="flat" onPress={()=> this._handleClick()}/>
 
+                <Button value='Default' onPress={()=> this._handleClick()}/>
+                <Button value='Default Block' block onPress={()=> this._handleClick()}/>
+                <Button value='Primary' type="primary" onPress={()=> this._handleClick()}/>
+                <Button value='Ghost' type="flat" onPress={()=> this._handleClick()}/>
+                <Button value='Default Disabled' disabled onPress={()=> this._handleClick()}/>
+                <Button value='Default Block Disabled' disabled block onPress={()=> this._handleClick()}/>
+                <Button value='Primary Disabled' disabled type="primary" onPress={()=> this._handleClick()}/>
+                <Button value='Ghost Disabled' disabled type="flat" onPress={()=> this._handleClick()}/>
             </View>
         )
     }
