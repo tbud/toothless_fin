@@ -6,4 +6,4 @@ import React, {
 
 import App from './App';
 
-AppRegistry.registerComponent('toothless_creditshop', () => App);
+AppRegistry.registerComponent('toothless_fin', () => App);

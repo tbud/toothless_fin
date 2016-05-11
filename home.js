@@ -16,6 +16,7 @@ import React, {
 Scale.changeTheme('233');
 
 import SecondPageComponent from './SecondPageComponent';
+import creditShopHome from './creditshop/creditshop_home';
 import route from './route';
 
 export default class App extends Component {
@@ -30,13 +31,20 @@ export default class App extends Component {
 
     _pressButton() {
         const { navigator } = this.props;
-        //为什么这里可以取得 props.navigator?请看上文:
-        //<Component {...route.params} navigator={navigator} />
-        //这里传递了navigator作为props
         if(navigator) {
             navigator.push({
                 name: 'SecondPageComponent',
                 component: SecondPageComponent,
+            })
+        }
+    }
+
+    _pressButtonB () {
+        const { navigator } = this.props;
+        if(navigator) {
+            navigator.push({
+                name: 'creditShopHome',
+                component: creditShopHome,
             })
         }
     }
@@ -49,6 +57,7 @@ export default class App extends Component {
                     <View style={{height:50, width:50, backgroundColor:'#ddd'}} onPress={()=> Alert.alert('Hello')}/>
                     <Text>{this.state.showText}</Text>
                     <Button value='Default' onPress={this._pressButton.bind(this)}/>
+                    <Button value='进入信用小店' onPress={this._pressButtonB.bind(this)}/>
                     <Input placeholder="normal input" keyboardType selectTextOnFocus />
                     <Input placeholder="disabled input" disabled defaultValue="Disable Input"/>
                     <Input placeholder="normal error input" error defaultValue="enter error info"/>
@@ -84,7 +93,6 @@ export default class App extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        height: 1000,
         // width: 250,
         // height: 230,
         // left:0,
